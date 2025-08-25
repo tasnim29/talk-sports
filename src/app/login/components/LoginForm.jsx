@@ -5,6 +5,7 @@ import loginAnimation from "@/assets/lottie.json";
 
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm();
@@ -42,7 +43,7 @@ const LoginForm = () => {
               />
             </div>
             <div>
-              <Button className="w-full" variant="button1">
+              <Button className="w-full py-6" variant="button1">
                 Log In
               </Button>
             </div>
@@ -50,9 +51,12 @@ const LoginForm = () => {
 
           <p className="text-gray-500 mt-6 text-center">
             Don't have an account?{" "}
-            <span className="text-indigo-600 font-medium cursor-pointer hover:underline">
+            <Link
+              href="/register"
+              className="text-indigo-600 font-medium cursor-pointer hover:underline"
+            >
               Sign Up
-            </span>
+            </Link>
           </p>
         </div>
 

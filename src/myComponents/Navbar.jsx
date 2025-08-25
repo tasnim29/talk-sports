@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <header className="absolute top-0 left-0 w-full z-50 bg-black/60">
+      <header className="absolute top-0 left-0 w-full z-50 ">
         <div className="flex justify-between items-center px-20 py-6 w-full">
           {/* Logo */}
           <div className="text-2xl font-bold text-white">TalkFootball</div>
