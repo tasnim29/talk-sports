@@ -1,20 +1,22 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <header className="absolute top-0 left-0 w-full z-50 bg-black/60">
+        <div className="flex justify-between items-center px-20 py-6 w-full">
           {/* Logo */}
-          <div className="text-2xl font-bold text-white">Qwin</div>
+          <div className="text-2xl font-bold text-white">TalkFootball</div>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8 text-white font-medium">
-            <a href="#fixtures" className="hover:text-blue-400">
-              Fixtures
+            <a href="/" className="hover:text-blue-400">
+              Home
             </a>
             <a href="#results" className="hover:text-blue-400">
               Results
@@ -33,14 +35,12 @@ const Navbar = () => {
             </a>
           </nav>
 
-          {/* Icons (Search + Profile) */}
-          <div className="hidden md:flex items-center space-x-6 text-white">
-            <button className="hover:text-blue-400">
-              <i className="fas fa-search"></i>
-            </button>
-            <button className="hover:text-blue-400">
-              <i className="fas fa-user-circle"></i>
-            </button>
+          {/* Right-side Icons + Login */}
+          <div className="hidden lg:block">
+            <Link href="/login">
+              {" "}
+              <Button variant="button2">Log In</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,6 +73,10 @@ const Navbar = () => {
             <a href="#news" className="block">
               News
             </a>
+            <Link href="/login">
+              {" "}
+              <Button variant="button2">Log In</Button>
+            </Link>
           </div>
         )}
       </header>
